@@ -1,25 +1,22 @@
-# Payara-Examples
-Repository for Example Code to demonstrate Payara specific features
+## Datasource Example
+This example shows how to deploy a datasource along with a war file using JPA in JavaEE 7
+JavaEE 7 introduce a standard mechanism for defining a datasource either by annotations or in the web.xml.
 
-### Administration Samples
-This module contains some example asadmin scripts for managing Payara
+This example defines a MySQL Datasource and packages up the MySQL Driver in the war.
 
-### JCache API Samples
-This module contains some samples demonstrating JCache API with Payara 4.1.153
+This example also shows how to add Payara Specific deployment properties to add
+extra capabilities to the Datasource for example connection validation, SQL Tracing and slow SQL logging.
 
-### Java EE
-Some simple Java EE example applications  
-Payara Clustered Singleton example application
+This example also shows environment variable replacement in Payara Micro from 172 onwards.
 
-### Payara Micro
-Example applications showing features of Payara Micro
+The datasource definition contains
+```xml
+     <server-name>${ENV=DB_HOST}</server-name>
+     <port-number>3306</port-number>
+     <database-name>test</database-name>
+     <user>${ENV=JDBC_USER}</user>
+     <!-- Example of using a Payara environment variable alias in the datasource definition -->
+     <password>${ENV=JDBC_PASSWORD}</password>
+```
 
-### REST examples
-Some simple examples of REST services
-
-### Payara Services Examples
-Some examples of additional Payara services, including:
-
-* Request Tracing Service
-* Notification Service
-* EclipseLink Cache Coordination / Invalidation MDB examples
+To deploy the example you need to have the environment variables DB_HOST, JDBC_USER and JDBC_PASSWORD set as these will be replaced in the web.xml on deployment.
