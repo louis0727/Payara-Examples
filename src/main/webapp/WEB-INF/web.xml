@@ -15,9 +15,11 @@
      <server-name>mysql</server-name>
      <port-number>3306</port-number>
      <database-name>test</database-name>
-     <user>${ENV=JDBC_USER}</user>
+<!--      <user>${ENV=JDBC_USER}</user> -->
+     <user>louis</user>
      <!-- Example of using a Payara password alias in the datasource definition -->
-     <password>${ENV=JDBC_PASSWORD}</password>
+<!--      <password>${ENV=JDBC_PASSWORD}</password> -->
+     <password>123456</password> 	    
     <!-- Example of how to use a Payara specific custom connection pool setting -->
      <property>
          <name>fish.payara.slow-query-threshold-in-seconds</name>
