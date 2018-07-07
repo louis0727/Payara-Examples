@@ -12,7 +12,7 @@
     <data-source>
      <name>java:global/JPAExampleDataSource</name>
      <class-name>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</class-name>
-     <server-name>${ENV=DB_HOST}</server-name>
+     <server-name>mysql</server-name>
      <port-number>3306</port-number>
      <database-name>test</database-name>
      <user>${ENV=JDBC_USER}</user>
