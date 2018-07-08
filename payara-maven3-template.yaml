@@ -7,7 +7,8 @@ objects:
   kind: BuildConfig
   metadata:
     annotations:
-      openshift.io/generated-by: OpenShiftWebConsole
+      pipeline.alpha.openshift.io/uses: '[{"name": "${NAME}", "namespace": "", "kind": "DeploymentConfig"}]'
+      #openshift.io/generated-by: OpenShiftWebConsole
     creationTimestamp: null
     labels:
       app: ${APPNAME}
